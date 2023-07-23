@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Bear</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebase.js"></script>
+<body>
+    <form style="text-align: center;">
+        <div class="box">
+            <h1>Crie seu personagem</h1>
+            <h3>Nome</h3>
+            <input type="text" id="name">
+            <h3>Data de Nascimento</h3>
+            <input type="date" id="birthday">
+            <h3>Raça</h3>
+            <select id="race">
+                <option value="">Humano</option>
+                <option value="">Infernal</option>
+                <option value="">Nacido em Umbraluna</option>
+                <option value="">Draconiano</option>
+                <option value="">Anão</option>
+                <option value="">Calvoniano</option>
+            </select>
+            <h3>Sexo</h3>
+            <select name="" id="sex">
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+                <option value="other">Outro</option>
+            </select>
+        </div>
+
+        <div class="box">
+            <div>
+                <h3>Classe</h3>
+                <select name="" id="class" onchange="changeClass()">
+                    <option value="undertaker">Coveiro</option>
+                    <option value="couchRevolutionary">Revolucionário de Sofá</option>
+                </select>
+            </div>
+            <div class="class-description" id="class-overview">
+                <div>
+                    <h3>Descrição</h3>
+                    <p id="class-overview-description" ></p>
+                </div>
+                <div>
+                    <h3 id="class-overview-passive-name"></h3>
+                    <h5>Passiva</h5>
+                    <p id="class-overview-passive-description"></p>
+                </div>
+                <div id="class-overview-abilities">
+                    <h3>Habilidades</h3>
+                    <h4 id="class_overview_first_ability_name"></h4>
+                    <p id="class-overview-first-ability"></p>
+                    <h4 id="class_overview_second_ability_name"></h4>
+                    <p id="class-overview-second-ability"></p>
+                    <h4 id="class_overview_third_ability_name"></h4>
+                    <p id="class-overview-third-ability"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Peculiariades</h3>
+            <select name="" id="perk" onchange="changePerk()">
+                <option value="none">Nenhuma</option>
+                <option value="blind">Cego</option>
+                <option value="pyro">Piromaniaco</option>
+                <option value="leper">Leproso</option>
+                <option value="diabetic">Diabetico</option>
+                <option value="playboy">Playboy</option>
+                <option value="BackdoorMan">Talarico</option>
+                <option value="alcoholic">Alcolatra</option>
+                <option value="withcrafter">Macumbeiro</option>
+                <option value="adhd">Problemas com TDAH</option>
+                <option value="smoker">Fumante</option>
+                <option value="">Bipolar</option>
+            </select>
+            <h4>Descrição</h4>
+            <p id="perk-description"></p>
+       </div>
+        <div class="box" style="padding-bottom: 15px; padding-top: 15px;">
+            <h3>Escolha um atributo para receber bonus inicial</h3>
+                <span class="miniBox">INT <input type="checkbox" name="check" onclick="onlyOne(this)"> </span>
+                <span class="miniBox">MET <input type="checkbox" name="check" onclick="onlyOne(this)"> </span>
+                <span class="miniBox">FDV <input type="checkbox" name="check" onclick="onlyOne(this)"> </span>
+                <span class="miniBox">RES<input  type="checkbox" name="check" onclick="onlyOne(this)"> </span>
+        </div>
+
+
+        <br>
+        <input style="margin-top: 20px;" type="submit" value="Create" onclick="saveData()">
+    </form>
+</body>
+</html>
