@@ -12,8 +12,8 @@ const firebaseConfig = {
   appId: "1:648929178353:web:a57043778f439d4071af50"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
-export { app, db, collection, getDocs, Timestamp, addDoc };
+export { collection, getDocs, Timestamp, addDoc };
 export { query, orderBy, limit, where, onSnapshot };
