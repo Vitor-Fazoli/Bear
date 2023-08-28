@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Bear - Create your account</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/firebase.js"></script>
+    <script type="module" src="/app/scripts/character_create.js"></script>
+</head>
+<body>
+    <form style="text-align: center;">
+        <div class="box">
+            <h1>Crie sua conta</h1>
+            <h3>Nome</h3>
+            <input type="text" id="name" required>
+            <h3>email</h3>
+            <input type="email" id="email" required>
+            <h3>Senha</h3>
+            <input type="password" id="password" required>
+            <h3>Data de Nascimento</h3>
+            <input type="date" id="birthday" required>
+            <h3>Raça</h3>
+            <select id="race" required>
+                <option value="human">Humano</option>
+                <option value="infernal">Infernal</option>
+                <option value="umbraborn">Nacido em Umbraluna</option>
+                <option value="draconian">Draconiano</option>
+            </select>
+            <h3>Sexo</h3>
+            <select name="" id="sex" required>
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+            </select>
+        </div>
+
+        <div class="box">
+            <div>
+                <h3>Classe</h3>
+                <select name="" id="class" required>
+                    <option value="spiritHunter">Caçador de Espíritos</option>
+                    <option value="couchRevolutionary">Revolucionário de Sofá</option>
+                    <option value="defender">Defensor</option>
+                    <option value="gardenerChief">Jardineiro Chefe</option>
+                    <option value="ironmancer">Ferromante</option>
+                </select>
+            </div>
+            <div class="class-description" id="class-overview">
+                <div>
+                    <h3>Descrição</h3>
+                    <p id="class-overview-description" ></p>
+                </div>
+                <div>
+                    <h3 id="class-overview-passive-name"></h3>
+                    <h5>Passiva</h5>
+                    <p id="class-overview-passive-description"></p>
+                </div>
+                <div id="class-overview-abilities">
+                    <h3>Habilidades</h3>
+                    <h4 id="class_overview_first_ability_name"></h4>
+                    <p id="class-overview-first-ability"></p>
+                    <h4 id="class_overview_second_ability_name"></h4>
+                    <p id="class-overview-second-ability"></p>
+                    <h4 id="class_overview_third_ability_name"></h4>
+                    <p id="class-overview-third-ability"></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p id="btn-save-data" class="box">Criar</p>
+    </form>
+</body>
+</html>

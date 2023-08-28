@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
-import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+import { collection, getDoc, addDoc, setDoc, Timestamp, doc } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
 import { query, orderBy, limit, where, onSnapshot } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+import {onAuthStateChanged, signInWithEmailAndPassword ,createUserWithEmailAndPassword, getAuth, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyCrF3q7znVdTQl9TvBilcgd_FJQbdkMl6g",
@@ -15,5 +16,6 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-export { collection, getDocs, Timestamp, addDoc };
+export { collection, getDoc, Timestamp, addDoc, setDoc, doc };
 export { query, orderBy, limit, where, onSnapshot };
+export { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, getAuth , setPersistence,browserSessionPersistence};
