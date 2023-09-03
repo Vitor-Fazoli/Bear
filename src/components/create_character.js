@@ -1,13 +1,34 @@
 import { db, setDoc, collection, doc, auth, getDoc } from '../config/firebase'
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import human from '../assets/human.png'
+import infernal from '../assets/infernal.png'
+import umbraluni from '../assets/umbraluni.png'
 
 export const CreateCharacter = () => {
 
     useEffect(()=>{
         changeDescription();
         characterAlreadyCreated();
+        changeRaceImage();
     }, [])
+
+    const changeRaceImage = () => {
+        switch (document.getElementById("race").value){
+            case "human":
+                document.getElementById("race-img").src = human;
+                break;
+            case "infernal":
+                document.getElementById("race-img").src = infernal;
+                break;
+            case "umbraluni":
+                document.getElementById("race-img").src = umbraluni;
+                break;
+            default:
+                console.error("Raça não conhecida");
+                break;
+        }
+    }
 
     const navigate = useNavigate();
 
@@ -220,12 +241,22 @@ export const CreateCharacter = () => {
             <p>Your Birthday</p>
             <input type="date" id="birthday" name="birthday" />
             <h3>Raça</h3>
-            <select id="race" required>
-                <option value="human">Human</option>
-                <option value="infernal">Infernal</option>
-                <option value="umbraluni">Umbraluni</option>
-                <option value="draconian">Draconian</option>
-            </select>
+            <div style={{display: 'flex'}}>
+                <select id="race" required onChange={changeRaceImage}>
+                    <option value="human">Human</option>
+                    <option value="infernal">Infernal</option>
+                    <option value="umbraluni">Umbraluni</option>
+                </select>
+                <img src={human} alt='race representation' id='race-img' style={{textAlign: "center"}}/>
+                <div>
+                    <h5>Upper left</h5>
+                    <select>
+                        <option>Without left hand</option>
+                        <option>Without left arm</option>
+                        <option>None</option>
+                    </select>
+                </div>
+            </div>
             <h3>Sex</h3>
             <select name="" id="sex" required>
                 <option value="male">Male</option>
