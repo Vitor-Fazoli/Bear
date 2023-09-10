@@ -213,7 +213,7 @@ export const CreateCharacter = () => {
             email: email,
             race: race,
             sex: sex,
-            class: class_type,
+            profession: class_type,
             stats: {
                 hp: classStats(class_type).hp,
                 spr: classStats(class_type).spr,
@@ -223,9 +223,15 @@ export const CreateCharacter = () => {
                 sprRes: classStats(class_type).sprRes,
                 ini: classStats(class_type).ini
             },
-            bag: {
-
-        },}).then(() => {
+            lvl: 1,
+            exp: 0,
+            perk: "none",
+            inventory: [
+                "morphine-u",
+                "morphine-u",
+                "desert herb",
+            ]
+    }).then(() => {
             window.alert("Document successfully written!");
             window.location.href = "/home";
         }).catch((error) => {
@@ -264,12 +270,12 @@ export const CreateCharacter = () => {
             </select>
             <div>
                 <h3>Class</h3>
-                <select name="spiritHunter" id="class" defaultValue={"spiritHunter"} required onChange={changeDescription}>
-                    <option value="spiritHunter">spirit Hunter</option>
-                    <option value="couchRevolutionary">Couch Revolutionary</option>
-                    <option value="defender">Defender</option>
-                    <option value="gardenerChief">Gardener Chief</option>
-                    <option value="ironmancer">Ironmancer</option>
+                <select style={{display: 'inline'}} name="spiritHunter" id="class" defaultValue={"spiritHunter"} required onChange={changeDescription}>
+                    <option style={{display: 'inline'}} value="spiritHunter">spirit Hunter</option>
+                    <option style={{display: 'inline'}} value="couchRevolutionary">Couch Revolutionary</option>
+                    <option style={{display: 'inline'}} value="defender">Defender</option>
+                    <option style={{display: 'inline'}} value="gardenerChief">Gardener Chief</option>
+                    <option style={{display: 'inline'}} value="ironmancer">Ironmancer</option>
                 </select>
             </div>
             <div>
