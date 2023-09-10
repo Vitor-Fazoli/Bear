@@ -223,6 +223,14 @@ export const CreateCharacter = () => {
                 sprRes: classStats(class_type).sprRes,
                 ini: classStats(class_type).ini
             },
+            body: {
+                eyes: "none",
+                ears: "none",
+                rightArm: "none",
+                rightLeg: "none",
+                leftArm: "none",
+                leftLeg: "none",
+            },
             lvl: 1,
             exp: 0,
             perk: "none",
@@ -240,13 +248,14 @@ export const CreateCharacter = () => {
     }
 
     return (
-        <div>
+        <div style={{padding: '1%'}}>
             <h1>Create Character</h1>
-            <p>Your Name</p>
+            <p style={{color: 'orange'}}>tip: all the characteristics if you hover the mouse over them, you can see the effects in the game</p>
+            <h3>Your Name</h3>
             <input type="text" id="name" name="name" />
-            <p>Your Birthday</p>
+            <h3>Your Birthday</h3>
             <input type="date" id="birthday" name="birthday" />
-            <h3>Raça</h3>
+            <h3>Race</h3>
             <div style={{display: 'flex'}}>
                 <select id="race" required onChange={changeRaceImage}>
                     <option value="human">Human</option>
@@ -255,10 +264,35 @@ export const CreateCharacter = () => {
                 </select>
                 <img src={human} alt='race representation' id='race-img' style={{textAlign: "center"}}/>
                 <div>
-                    <h5>Upper left</h5>
-                    <select>
-                        <option>Without left hand</option>
-                        <option>Without left arm</option>
+                    <h5 style={{marginLeft: '-350px'}}>Eyes</h5>
+                    <select style={{marginLeft: '-350px'}} title='you lose all your initiative, but you have 50% more spirit resistance'>
+                        <option>Blind</option>
+                        <option>Myopic</option>
+                        <option>Normal</option>
+                        <option>Night Vision</option>
+                    </select>
+                    <h5 style={{marginLeft: '-180px'}}>Upper right</h5>
+                    <select style={{marginLeft: '-180px'}}>
+                        <option>Without right hand</option>
+                        <option>Without right arm</option>
+                        <option>None</option>
+                    </select>
+                    <h5 style={{marginLeft: '-80px'}}>Upper Left</h5>
+                    <select style={{marginLeft: '-80px'}}>
+                        <option>Without right hand</option>
+                        <option>Without right arm</option>
+                        <option>None</option>
+                    </select>
+                    <h5 style={{marginLeft: '-180px'}}>Lower right</h5>
+                    <select style={{marginLeft: '-180px'}}>
+                        <option>Without right hand</option>
+                        <option>Without right arm</option>
+                        <option>None</option>
+                    </select>
+                    <h5 style={{marginLeft: '-350px'}}>Lower Left</h5>
+                    <select style={{marginLeft: '-350px'}}>
+                        <option>Without left foot</option>
+                        <option>Without left leg</option>
                         <option>None</option>
                     </select>
                 </div>
@@ -269,16 +303,17 @@ export const CreateCharacter = () => {
                 <option value="female">Female</option>
             </select>
             <div>
-                <h3>Class</h3>
-                <select style={{display: 'inline'}} name="spiritHunter" id="class" defaultValue={"spiritHunter"} required onChange={changeDescription}>
-                    <option style={{display: 'inline'}} value="spiritHunter">spirit Hunter</option>
-                    <option style={{display: 'inline'}} value="couchRevolutionary">Couch Revolutionary</option>
-                    <option style={{display: 'inline'}} value="defender">Defender</option>
-                    <option style={{display: 'inline'}} value="gardenerChief">Gardener Chief</option>
-                    <option style={{display: 'inline'}} value="ironmancer">Ironmancer</option>
+                <h3>Profession</h3> 
+                <p>&#10068;</p>
+                <select name="spiritHunter" id="class" defaultValue={"spiritHunter"} required onChange={changeDescription}>
+                    <option value="spiritHunter">spirit Hunter</option>
+                    <option value="couchRevolutionary">Couch Revolutionary</option>
+                    <option value="defender">Defender</option>
+                    <option value="gardenerChief">Gardener Chief</option>
+                    <option value="ironmancer">Ironmancer</option>
                 </select>
             </div>
-            <div>
+            <div style={{paddingBottom: '2%'}}>
                 <div class="class-description" id="class-overview">
                     <div>
                         <h3>Description</h3>
